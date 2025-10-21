@@ -11,7 +11,7 @@ export default function RootLayout({ pageTitle, children }) {
             <div
                 className={cn(
                     "my-5 mr-5 w-full gap-5 backdrop-blur-[10px] bg-white/10 dark:bg-neutral-900/30",
-                    "shadow-lg rounded-2xl p-5 pl-8 overflow-y-auto text-justify"
+                    "shadow-lg rounded-2xl p-5 pl-8 overflow-y-auto element text-justify"
                 )}
             >
                 {children}

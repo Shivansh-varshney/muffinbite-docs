@@ -12,17 +12,15 @@ export default function Home() {
   };
 
   return (
-    <div
-      className="bg-black w-full h-full">
-
-      <Particles
-      >
+    <Particles >
+      <div
+        className="w-full h-full">
         <div className="flex items-center justify-center h-full">
           <div className="absolute top-[1em]">
             <NavBar
               items={[
                 { label: 'Docs', href: '/docs/introduction' },
-                { label: 'Download', href: '/docs/set_up' },
+                { label: 'Install', href: '/docs/set_up' },
                 { label: 'Examples', href: '/docs/use' },
                 { label: 'Developer', href: '/developer' }
               ]}
@@ -51,7 +49,7 @@ export default function Home() {
             <p>Where automation meets personalization</p>
           </div>
         </div>
-      </Particles>
-    </div >
+      </div >
+    </Particles>
   );
 }

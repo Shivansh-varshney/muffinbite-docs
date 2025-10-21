@@ -116,67 +116,72 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
-/* ===========================
-   Theme Variables
-=========================== */
-
 /* Dark Theme (default) */
 :root {
   /* Background */
-  --bg-color: #0d0d0d;
-  --particle-color: #ffffff;
+  --bg-color: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%);
+  --particle-color: #E0F2FE;
 
   /* Glass panel */
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-blur: 10px;
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-blur: 12px;
   --glass-border-radius: 16px;
   --glass-border: rgba(255, 255, 255, 0.2);
 
   /* Typography */
-  --font-color: #ffffff;
-  --heading-color: #ffffff;
-  --text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --font-color: #F8FAFC;
+  --heading-color: #FFFFFF;
+  --text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 
   /* Card */
-  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-bg: rgba(255, 255, 255, 0.06);
   --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 
   /* Accent */
-  --accent-color: #ff4c60;
-  --accent-hover: #ff6b81;
+  --accent-color: #60A5FA;
+  /* Sky blue */
+  --accent-hover: #93C5FD;
 
   /* Button */
-  --button-bg: rgba(255, 255, 255, 0.1);
-  --button-color: #ffffff;
-  --button-hover: rgba(255, 255, 255, 0.2);
+  --button-bg: rgba(255, 255, 255, 0.15);
+  --button-color: #FFFFFF;
+  --button-hover: rgba(255, 255, 255, 0.25);
 }
 
 /* Light Theme */
 [data-theme="light"] {
-  --bg-color: #f0f0f5;
-  --particle-color: #333333;
-  --glass-bg: rgba(255, 255, 255, 0.3);
-  --glass-border: rgba(255, 255, 255, 0.5);
-  --font-color: #111111;
-  --heading-color: #111111;
-  --text-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  --card-bg: rgba(255, 255, 255, 0.8);
-  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  --accent-color: #ff4c60;
-  --accent-hover: #ff6b81;
-  --button-bg: rgba(0, 0, 0, 0.05);
-  --button-color: #111111;
-  --button-hover: rgba(0, 0, 0, 0.1);
+  --bg-color: linear-gradient(135deg, #E0F2FE 0%, #BFDBFE 100%);
+  --particle-color: #1E3A8A;
+
+  /* Glass panel */
+  --glass-bg: rgba(255, 255, 255, 0.5);
+  --glass-border: rgba(30, 58, 138, 0.2);
+
+  /* Typography */
+  --font-color: #1E3A8A;
+  --heading-color: #1E3A8A;
+  --text-shadow: 0 2px 6px rgba(59, 130, 246, 0.15);
+
+  /* Card */
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
+
+  /* Accent */
+  --accent-color: #2563EB;
+  --accent-hover: #3B82F6;
+
+  /* Button */
+  --button-bg: rgba(59, 130, 246, 0.1);
+  --button-color: #1E3A8A;
+  --button-hover: rgba(59, 130, 246, 0.2);
 }
 
-/* ===========================
-   Global Styles
-=========================== */
 html,
 body {
   margin: 0;
@@ -185,8 +190,43 @@ body {
   height: 100%;
   font-family: 'Inter', sans-serif;
   color: var(--font-color);
-  background-color: var(--bg-color);
+  background: var(--bg-color);
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
   overflow-x: hidden;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--glass-border-radius);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--card-shadow);
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem;
+  color: var(--font-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+button {
+  color: var(--button-color);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 h1,
@@ -197,100 +237,20 @@ h5,
 h6 {
   color: var(--heading-color);
   text-shadow: var(--text-shadow);
-  margin: 0;
+  margin-bottom: 0;
 }
 
-
-/* ===========================
-   Glass Panels
-=========================== */
-.glass {
-  /* Layout spacing */
-  display: flex;
-  justify-content: space-between;
-  gap: 2.5rem;
-  /* gap-10 */
-
-  /* Frosted glass background */
-  background: rgba(255, 255, 255, 0.1);
-  /* bg-white/10 */
-  backdrop-filter: blur(24px);
-  /* backdrop-blur-xl */
-  -webkit-backdrop-filter: blur(24px);
-
-  /* Border + shadow */
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  /* border-white/20 */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  /* shadow-lg */
-  border-radius: 1rem;
-  /* rounded-2xl */
-
-  /* Transition for smooth theme switch */
-  transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* ===========================
-   Cards
-=========================== */
-.card {
-  background: var(--card-bg);
-  border-radius: var(--glass-border-radius);
-  padding: 1rem 2rem;
-  box-shadow: var(--card-shadow);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.element {
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
-}
-
-/* ===========================
-   Buttons
-=========================== */
-.button {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  border-radius: 12px;
-  border: none;
-  background: var(--button-bg);
-  color: var(--button-color);
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.button:hover {
-  background: var(--button-hover);
-}
-
-/* ===========================
-   Utilities
-=========================== */
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.fullscreen {
-  width: 100%;
-  height: 100vh;
-}
-
-.text-center {
-  text-align: center;
-}
-
-/* ===========================
-   Glass + Card Example Overlay
-=========================== */
-.overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.element::-webkit-scrollbar {
+  display: none;
 }

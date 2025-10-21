@@ -42,10 +42,10 @@ export default function Introduction() {
 
                     <h2 className="text-4xl font-extrabold text-white tracking-tight">Features</h2>
                     <div className="mx-5 my-2 flex flex-col md:flex-row justify-between gap-8 mb-6">
-                        <ul className="list-disc list-inside space-y-1 text-white/90 text-[15px] leading-relaxed overflow-y-auto max-h-72 pr-4
+                        <ul className="list-disc list-inside space-y-1 text-white/90 text-[15px] leading-relaxed overflow-y-auto element max-h-72 pr-4
                       scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent hover:scrollbar-thumb-white/40 transition-all duration-300">
                             <li>Attach unlimited files of any type</li>
-                            <li>Send bulk emails using the Gmail API</li>
+                            <li>Send 500 emails per day using the Gmail API</li>
                             <li>Log successful and failed email attempts to CSV files</li>
                             <li>Personalize email content using CSV/Excel data sources</li>
                             <li>Detailed error logging to file when debug mode is enabled</li>
@@ -53,10 +53,10 @@ export default function Introduction() {
                             <li>Set a custom time delay between sending emails to avoid spam filters</li>
                         </ul>
 
-                        <ul className="list-disc list-inside space-y-1 text-white/90 text-[15px] leading-relaxed overflow-y-auto max-h-72 pr-4
+                        <ul className="list-disc list-inside space-y-1 text-white/90 text-[15px] leading-relaxed overflow-y-auto element max-h-72 pr-4
                       scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent hover:scrollbar-thumb-white/40 transition-all duration-300">
                             <li>Run shell commands directly from the MuffinBite CLI using “!command”</li>
-                            <li>Send bulk HTML template emails with embedded images (base64 supported)</li>
+                            <li>Send 500 HTML template emails per day with embedded images (base64 supported)</li>
                             <li>Insert variables into subject lines and email bodies for dynamic outreach</li>
                             <li>Test mode: send emails using test data before running real campaigns</li>
                             <li>Add custom HTML signatures to all outgoing emails (with enable/disable toggle)</li>

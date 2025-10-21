@@ -65,15 +65,15 @@ help - Shows all the available commands and their uses
                 <p>These are 7 commands in total with their usage and proper examples.</p>
                 <p>Up until now, We&apos;ve already seen what, &apos;send&apos;, &apos;build&apos; and, &apos;help&apos; does. Now we&apos;ll see the remaining commands.</p>
                 <p className="ml-5">
-                    1. &quot;exit&quot;: It will close the muffinbite cli and bring you out of the application.
+                    1. &quot;exit&quot;: It will close the MuffinBite CLI and bring you out of the application.
                     <br />
-                    2. &quot;reset&quot;: It deletes the current configurations for muffinbite completely, so you can have a fresh start.
+                    2. &quot;reset&quot;: It deletes the current configurations for MuffinBite completely, so you can have a fresh start.
                     <br />
                     3. &quot;camp&quot;: It helps maintain the whole campaign section, create, list, show a particular campaign, or delete one.
                     <br />
                     4. &quot;config&quot;: It helps with manipulating the core authentication and settings configurations.
                 </p>
-                We will discuss the &quot;config&quot; command with all its flags, as it connects with the center of muffinbite.
+                We will discuss the &quot;config&quot; command with all its flags, as it connects with the center of MuffinBite.
                 <ol className="ml-5 list-inside list-decimal space-y-1 text-gray-200">
                     <li><strong>config --user-name &quot;name&quot;</strong>: Sets the display name that appears on sent emails.</li>
                     <li><strong>config --user-email &quot;example@domain.com&quot;</strong>: Updates the email address used for sending. Each new email must be authenticated before use.</li>

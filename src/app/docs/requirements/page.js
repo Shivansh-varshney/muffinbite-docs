@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Tabs, TabsTrigger, TabsList, TabsContent } from "@/components/ui/tabs"
-import { ExternalLink, ArrowRight, ArrowLeft } from "lucide-react";
+import { ExternalLink, ArrowRight, ArrowLeft, Dot, Circle, CircleDot, CircleIcon, Disc, Disc2, Disc2Icon, Disc3, DiscAlbum } from "lucide-react";
 import Link from "next/link";
 
 export default function Requirements() {
@@ -17,10 +17,14 @@ export default function Requirements() {
             <div>
                 <h2 className="text-2xl font-bold">Requirements</h2>
                 <p className="ml-5 my-2">
-                    Currently, MuffinBite supports two methods for sending emails — either through the <strong>Gmail API</strong> or via <strong>SMTP service providers</strong>.
+                    Currently, MuffinBite supports two methods for sending emails, either through the <strong>Gmail API</strong> or via <strong>SMTP service providers</strong>.
                 </p>
                 <p className="ml-5">
                     Each method has a few setup requirements. You can easily meet these by following the mini tutorials provided below.
+                </p>
+                <p className="flex items-center gap-1 my-2 font-bold text-lg">
+                    <Disc size={12} />
+                    The first requirement is that Python must be installed on your system. You can download <strong>Python</strong> from <a href="https://www.python.org/downloads/" target="_blank" className="flex items-center gap-1 !underline text-yellow-400 hover:text-yellow-300">here <ExternalLink size={14} /></a>.
                 </p>
             </div>
 
@@ -54,7 +58,7 @@ export default function Requirements() {
                     </TabsList>
                 </div>
 
-                <TabsContent className="mx-5 overflow-y-auto" value="google">
+                <TabsContent className="mx-5 overflow-y-auto element" value="google">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key="google"
@@ -66,7 +70,7 @@ export default function Requirements() {
                             <h2 className="flex gap-1">
                                 To use Google Gmail, you’ll need to download the <strong>Gmail API client file</strong> from{" "}
                                 <a
-                                    className="flex items-center gap-1 !underline !underline-offset-2 text-blue-400 hover:text-blue-300 transition"
+                                    className="flex items-center gap-1 !underline !underline-offset-2 text-yellow-400 hover:text-yellow-300 transition"
                                     href="https://cloud.google.com/"
                                     target="_blank"
                                 >
@@ -105,7 +109,7 @@ export default function Requirements() {
                         </motion.div>
                     </AnimatePresence>
                 </TabsContent>
-                <TabsContent className="mx-5 overflow-y-auto" value="smtp">
+                <TabsContent className="mx-5 overflow-y-auto element" value="smtp">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key="smtp"
@@ -118,7 +122,7 @@ export default function Requirements() {
                                 To use SMTP Service Provider, you’ll need <strong>SERVER, PORT, USERNAME/LOGIN, PASSWORD</strong> from a provider.
                             </h2>
                             <h2 className="flex gap-1">
-                                Example below uses <a href="https://app.brevo.com/" className="flex items-center gap-1 underline text-blue-400">Brevo <ExternalLink size={14} /></a>,
+                                Example below uses <a href="https://app.brevo.com/" className="flex items-center gap-1 !underline text-yellow-400">Brevo <ExternalLink size={14} /></a>,
                                 but you can use any provider that gives you these four credentials.
                             </h2>
                             <Image alt="" width={100} height={100} src="/demos/brevo.GIF" className="w-1/2 ml-5 my-2" />

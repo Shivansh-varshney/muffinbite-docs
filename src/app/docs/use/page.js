@@ -24,7 +24,7 @@ export default function Use() {
 
     const codeText = `bite> camp --create
 Enter name for the campaign: test
-Enter subject line for the email: {{Name}}, welcome to muffinbite.
+Enter subject line for the email: {{Name}}, welcome to MuffinBite.
 Enter template name you want to use: test
 Enter attachments, (separated by commas if more than one): sailing_ship.pdf
 Enter CC emails, (separated by commas if more than one):
@@ -38,10 +38,10 @@ Enter BCC emails, (separated by commas if more than one): example@domain.com, an
             <h2 className="text-2xl font-bold">How to Use</h2>
             <div className="ml-5 my-2 text-lg text-justify space-y-5">
                 <p>
-                    Before we move to creating campaigns and sending the emails, let&apos;s understand the purpose of default folders provided by muffinbite.
+                    Before we move to creating campaigns and sending the emails, let&apos;s understand the purpose of default folders provided by MuffinBite.
                 </p>
                 <p>
-                    Muffinbite generates 5 folders on the first run. (6th folder i.e. &quot;Logs&quot; is generated when we set debug to &quot;True&quot;)
+                    MuffinBite generates 5 folders on the first run. (6th folder i.e. &quot;Logs&quot; is generated when we set debug to &quot;True&quot;)
                     <Image width={200} height={100} alt="" src="/demos/folder_structure.png" className="w-1/2 my-2 ml-5" />
                 </p>
                 <p>
@@ -55,7 +55,7 @@ Enter BCC emails, (separated by commas if more than one): example@domain.com, an
                     <li><strong>Templates</strong>: Place all your HTML templates in this folder.</li>
                     <li><strong>Logs</strong>: Stores debug-level information in the <code>errors.log</code> file. This file is only created when debug mode is enabled.</li>
                 </ol>
-                <p>With that said, let&apos;s create our first campaign to get a better understanding of muffinbite&apos;s power.</p>
+                <p>With that said, let&apos;s create our first campaign to get a better understanding of MuffinBite&apos;s power.</p>
                 <Tabs className="mt-6" value={activeTab} onValueChange={setActiveTab}>
                     <div className="relative w-full">
                         <TabsList className="relative flex w-full bg-transparent rounded-full overflow-hidden">
@@ -106,7 +106,7 @@ Enter BCC emails, (separated by commas if more than one): example@domain.com, an
                         </TabsList>
                     </div>
 
-                    <TabsContent className="mx-5 mt-4 overflow-y-auto" value="sample">
+                    <TabsContent className="mx-5 mt-4 overflow-y-auto element" value="sample">
                         <AnimatePresence mode="wait">
                             {
                                 activeTab == "sample" &&
@@ -129,7 +129,7 @@ Enter BCC emails, (separated by commas if more than one): example@domain.com, an
                                             <code onClick={copyToClipboard} className="whitespace-pre-wrap block">
                                                 {`bite> camp --create
 Enter name for the campaign: test
-Enter subject line for the email: {{Name}}, welcome to muffinbite.
+Enter subject line for the email: {{Name}}, welcome to MuffinBite.
 Enter template name you want to use: test
 Enter attachments, (separated by commas if more than one): sailing_ship.pdf
 Enter CC emails, (separated by commas if more than one): 
@@ -144,7 +144,7 @@ bite>
                                         Now, we will move forward to sending our first email as &quot;test&quot; with the below command:
                                         <Image width={200} height={100} alt="" src="/demos/send_test.png" className="w-1/2 ml-5 my-2" />
                                         Also, you can see the message on the screen, &quot;Please visit this URL to authorize this application&quot;. <br />
-                                        When you send emails for the first time, google asks for authentication for your account, This is a one time thing only. <br />
+                                        When you send emails for the first time, Google asks for authentication for your account, This is a one time thing only. <br />
                                         A browser window will open automatically, just visit the site and allow your own application to send the emails on your behalf.
                                         <br />
                                         <strong>
@@ -152,7 +152,7 @@ bite>
                                         </strong>
                                         <br />
                                         <span className="ml-5">
-                                            This is your own application with the name &quot;muffinbite&quot; that you created on your google cloud console, so there&apos;s nothing <br />
+                                            This is your own application with the name &quot;muffinbite&quot; that you created on your Google Cloud Console, so there&apos;s nothing <br />
                                             to worry about it. Just make sure that you keep your &quot;credentials.json&quot; file safe.
                                         </span>
                                     </p>
@@ -165,7 +165,7 @@ bite>
                             }
                         </AnimatePresence>
                     </TabsContent>
-                    <TabsContent className="mx-5 mt-4 overflow-y-auto" value="templates">
+                    <TabsContent className="mx-5 mt-4 overflow-y-auto element" value="templates">
                         <AnimatePresence mode="wait">
                             {
                                 activeTab == "templates" &&
@@ -178,46 +178,105 @@ bite>
                                 >
                                     <div className="text-justified mx-5">
                                         <p>
-                                            MuffinBite uses HTML templates for email content—you don’t need to write HTML yourself. Simply ask any AI model, like ChatGPT or Gemini, to generate a base HTML template for you.
+                                            MuffinBite uses HTML templates for email content, you don’t need to write HTML yourself. Simply ask any AI model, like ChatGPT or Gemini, to generate a base HTML template for you.
                                         </p>
+                                        <br />
                                         <p>
                                             MuffinBite can automatically extract data from each row of your file and insert it into the template, both in the subject line and the email body.
                                         </p>
                                         <p>
-                                            Use {"{{variable}}"} where `variable` corresponds to the column name in your file. Here’s an example:
+                                            Use {"{{variable}}"} where `variable` corresponds to the column name in your file, you have already seen the same happening with the subject line in the sample. Let&apos;s say my data file looks something like:
                                         </p>
                                         <Image width={600} height={100} alt="" src="/demos/csv.png" className="ml-5 my-2" />
                                         <p className="flex flex-col">
-                                            <span>My <code>test.csv</code> file has columns named <strong>Name</strong> and <strong>Email</strong>, so I can use {"{{Name}}"} or {"{{Email}}"} in the HTML template or subject line to insert data row by row, like below:</span>
+                                            <span>Then, I can use {"{{Name}}"} in the html template like below:</span>
                                             <span className="inline-block mx-5 my-2 relative bg-black/50 rounded-xl p-4 font-mono text-sm text-white/90 shadow-inner overflow-x-auto">
                                                 <code onClick={copyToClipboard} className="whitespace-pre-wrap block">
-                                                    {`<table width="100%" cellpadding="0" cellspacing="0" role="presentation"
-    style="background:linear-gradient(120deg, #8b1e3f, #d94a6a); color:#ffffff; margin:0; padding:0;">
-    <tr>
-      <td align="center" style="padding:60px 20px;">
-        <h1 style="margin:0; font-size:40px; line-height:1.2; font-weight:bold;">Welcome to MuffinBite {{Name}} 🎉</h1>
-        <p style="margin:20px 0 30px; font-size:18px; max-width:500px;">
-          A modern platform to power your campaigns. Design, automate, and send emails with style.
-        </p>
-        <a href="#"
-          style="background:#ffffff; color:#8b1e3f; padding:14px 28px; border-radius:6px; font-weight:bold; font-size:16px; display:inline-block; text-decoration:none;">Get
-          Started</a>
-      </td>
-    </tr>
-</table>
+                                                    {`<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Email Template</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            margin-top: 20px;
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .button a {
+            background-color: #4A90E2;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        p {
+            margin: 0 0 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <table width="100%" bgcolor="#f7f7f7">
+        <tr>
+            <td align="center">
+                <table width="600" bgcolor="#ffffff">
+                    <tr>
+                        <td align="center" style="padding: 20px;">
+                            <img src="/home/shivansh/Documents/all_codes/tryMuffinBite/Attachments/profile.jpg" alt="Profile Image" width="50%" height="100%"
+                                style="border-radius:10%; display:block; margin-bottom:10px;">
+                            <h2>Hello {{Name}},</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="content">
+                            <p>We’re thrilled to have you onboard! This email is a sample template you can send via
+                                MuffinBite.</p>
+                            <p>Customize it to include your campaign content, personalized greetings, or offers.</p>
+                            <p class="button" style="text-align:center; margin-top:20px;">
+                                <a href="#">Take Action</a>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#f0f0f0" align="center" style="padding: 15px; font-size:12px; color:#888;">
+                            <p>You received this email because you signed up for our service.</p>
+                            <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
 `}
                                                 </code>
                                             </span>
                                         </p>
                                         <p>
-                                            You have already seen the same happening with subject line in the sample, and will see it again in the next step.
+                                            Also, to insert the image in my html template, I&apos;ve given the absolute location of the file in the src value of {"<img />"} tag.
                                         </p>
                                     </div>
                                 </motion.div>
                             }
                         </AnimatePresence>
                     </TabsContent>
-                    <TabsContent className="mx-5 mt-4 overflow-y-auto" value="campaign">
+                    <TabsContent className="mx-5 mt-4 overflow-y-auto element" value="campaign">
                         <AnimatePresence mode="wait">
                             {
                                 activeTab == "campaign" &&
@@ -229,7 +288,7 @@ bite>
                                     transition={{ duration: 0.4, ease: "easeInOut" }}
                                 >
                                     <p className="flex flex-col ml-5">
-                                        We&apos;ll go to our muffinbite terminal, and get started with creating a campaign.
+                                        We&apos;ll go to our MuffinBite terminal, and get started with creating a campaign.
                                         <br /> The command to create a campaign is:
                                         <span className="inline-block mx-5 my-2 relative bg-black/50 rounded-xl p-4 font-mono text-sm text-white/90 shadow-inner overflow-x-auto">
                                             <button
@@ -266,7 +325,7 @@ bite>
                             }
                         </AnimatePresence>
                     </TabsContent>
-                    <TabsContent className="mx-5 mt-4 overflow-y-auto" value="test">
+                    <TabsContent className="mx-5 mt-4 overflow-y-auto element" value="test">
                         <AnimatePresence mode="wait">
                             {
                                 activeTab == "test" &&
@@ -281,7 +340,7 @@ bite>
                                         Muffinbite sends emails in two modes: <strong>test</strong> and <strong>real</strong>
                                         <ol className="ml-5 list-inside list-decimal">
                                             <li>
-                                                Test Emails: Data that is in files with &apos;test&apos; as prefix in their names is treated as test data (show in step 1: Templates & Data)
+                                                Test Emails: Data that is in files with &apos;test&apos; as prefix in their names is treated as test data (shown in step 1: Templates & Data)
                                             </li>
                                             <li>
                                                 Real Emails: Data that is in files without &apos;test&apos; as prefix in their names is treated as real data
@@ -298,7 +357,7 @@ Sending emails from: test.csv
 
       sent to: varshneyshivansh36@gmail.com
 
-ALl Done !!
+All Done !!
 
 bite>
 `}
@@ -313,7 +372,7 @@ bite>
                             }
                         </AnimatePresence>
                     </TabsContent>
-                    <TabsContent className="mx-5 mt-4 overflow-y-auto" value="real">
+                    <TabsContent className="mx-5 mt-4 overflow-y-auto element" value="real">
                         <AnimatePresence mode="wait">
                             {
                                 activeTab == "real" &&
@@ -340,7 +399,7 @@ Sending emails from: real.csv
 
       sent to: tutorial.muffinbite@gmail.com
 
-ALl Done !!
+All Done !!
 
 bite>
 `}
