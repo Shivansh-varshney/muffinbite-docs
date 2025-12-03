@@ -11,6 +11,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const metadata = {
+  title: {
+    default: "Muffinbite Docs",
+    template: "%s | Muffinbite"
+  }
+}
+
 
 export default function RootLayout({ children }) {
   return (
