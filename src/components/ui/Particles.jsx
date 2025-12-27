@@ -87,10 +87,10 @@ const fragment = /* glsl */ `
 
 const Particles = ({
   particleCount = 1000,
-  particleSpread = 10,
-  speed = 0.1,
-  particleColors = ['#ffffff', '#ffffff'],
-  moveParticlesOnHover = true,
+  particleSpread = 7,
+  speed = 0.01,
+  particleColors = ['#989090af', '#989090af'],
+  moveParticlesOnHover = false,
   particleHoverFactor = 1,
   alphaParticles = false,
   particleBaseSize = 100,

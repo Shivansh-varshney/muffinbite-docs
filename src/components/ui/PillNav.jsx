@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { gsap } from 'gsap';
+// import { Menu } from 'lucide-react';
 
 const PillNav = ({
   items,
@@ -233,11 +234,12 @@ const PillNav = ({
         
         <div
           ref={navItemsRef}
-          className="relative items-center rounded-full hidden md:flex ml-2"
+          className="relative items-center bg-black/34 backdrop-blur-[30px] rounded-lg hidden md:flex ml-2"
           style={{
             height: 'var(--nav-h)',
-            background: 'var(--base, #000)'
+            // background: 'var(--base, #000)'
           }}>
+          
           <ul
             role="menubar"
             className="list-none flex items-stretch m-0 p-[3px] h-full"
@@ -255,7 +257,7 @@ const PillNav = ({
               const PillContent = (
                 <>
                   <span
-                    className="hover-circle absolute left-1/2 bottom-0 rounded-full z-[1] block pointer-events-none"
+                    className="hover-circle absolute left-1/2 bottom-0 rounded-lg z-[1] block pointer-events-none"
                     style={{
                       background: 'var(--base, #000)',
                       willChange: 'transform'
@@ -282,7 +284,7 @@ const PillNav = ({
                   </span>
                   {isActive && (
                     <span
-                      className="absolute left-1/2 -bottom-[6px] -translate-x-1/2 w-3 h-3 rounded-full z-[4]"
+                      className="absolute left-1/2 -bottom-[6px] -translate-x-1/2 w-3 h-3 rounded-lg z-[4]"
                       style={{ background: 'var(--base, #000)' }}
                       aria-hidden="true" />
                   )}
@@ -290,7 +292,7 @@ const PillNav = ({
               );
 
               const basePillClasses =
-                'relative overflow-hidden inline-flex items-center justify-center h-full no-underline rounded-full box-border font-semibold text-[16px] leading-[0] uppercase tracking-[0.2px] whitespace-nowrap cursor-pointer px-0';
+                'relative overflow-hidden inline-flex items-center justify-center h-full no-underline rounded-lg box-border font-semibold text-[16px] leading-[0] uppercase tracking-[0.2px] whitespace-nowrap cursor-pointer px-0';
 
               return (
                 <li key={item.href} role="none" className="flex h-full">
@@ -323,33 +325,27 @@ const PillNav = ({
           </ul>
         </div>
 
-        <button
+        {/* <button
           ref={hamburgerRef}
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
           aria-expanded={isMobileMenuOpen}
-          className="md:hidden rounded-full border-0 flex flex-col items-center justify-center gap-1 cursor-pointer p-0 relative"
+          className="md:hidden rounded-lg bg-black/34 backdrop-blur-[30px] border-0 flex flex-col items-center justify-center gap-1 cursor-pointer p-0 relative"
           style={{
             width: 'var(--nav-h)',
             height: 'var(--nav-h)',
-            background: 'var(--base, #000)'
           }}>
-          <span
-            className="hamburger-line w-4 h-0.5 rounded origin-center transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-            style={{ background: 'var(--pill-bg, #fff)' }} />
-          <span
-            className="hamburger-line w-4 h-0.5 rounded origin-center transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-            style={{ background: 'var(--pill-bg, #fff)' }} />
-        </button>
+          <Menu />
+        </button> */}
       </nav>
       <div
-        ref={mobileMenuRef}
-        className="md:hidden absolute top-[3em] left-4 right-4 rounded-[27px] shadow-[0_8px_32px_rgba(0,0,0,0.12)] z-[998] origin-top"
+        // ref={mobileMenuRef}
+        className="w-fit md:hidden rounded-lg shadow-lg z-[998]"
         style={{
           ...cssVars,
-          background: 'var(--base, #f0f0f0)'
+          // background: 'var(--base, #f0f0f0)'
         }}>
-        <ul className="list-none m-0 p-[3px] flex flex-col gap-[3px]">
+        <ul className="list-none m-0 mt-2 p-[3px] flex gap-[3px] bg-black/34 backdrop-blur-[30px] rounded-lg">
           {items.map(item => {
             const defaultStyle = {
               background: 'var(--pill-bg, #fff)',
@@ -365,7 +361,7 @@ const PillNav = ({
             };
 
             const linkClasses =
-              'block py-3 px-4 text-[16px] font-medium rounded-[50px] transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]';
+              'block py-3 px-4 text-[16px] font-medium rounded-lg transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]';
 
             return (
               <li key={item.href}>

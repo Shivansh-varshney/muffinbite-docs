@@ -8,7 +8,6 @@ export default function Menu() {
 
     const [open, setOpen] = useState(false);
     const links = [
-        { label: 'Home', href: '/', icon: <Home className="w-5 h-5" color="white" /> },
         { label: 'Introduction', href: '/docs/introduction', icon: <Info className="w-5 h-5" color="white" /> },
         { label: 'Requirements', href: '/docs/requirements', icon: <Box className="w-5 h-5" color="white" /> },
         { label: 'Set up', href: '/docs/set_up', icon: <Settings className="w-5 h-5" color="white" /> },
@@ -18,11 +17,11 @@ export default function Menu() {
     ]
 
     return (
-        <div className="p-5 h-full">
+        <div className="py-4 md:p-5 h-full">
             <Sidebar open={open} setOpen={setOpen} animate={true}>
                 <SidebarBody className={cn(
-                    "justify-between gap-10 backdrop-blur-[10px] bg-white/10 dark:bg-neutral-900/30",
-                    "shadow-lg rounded-2xl"
+                    "justify-between gap-10 backdrop-blur-[10px] bg-black/30 dark:bg-neutral-900/30",
+                    "shadow-lg md:rounded-lg"
                 )}>
                     <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto gap-4">
                         <Logo />

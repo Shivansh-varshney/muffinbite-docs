@@ -4,7 +4,7 @@ Official documentation website for **MuffinBite**, a powerful CLI-based email au
 
 ## About
 
-This is the documentation site for MuffinBite, built with Next.js 15. It provides comprehensive guides, setup instructions, and usage examples for the MuffinBite email automation framework.
+This is the documentation site for MuffinBite, built with Next.js 15. It provides comprehensive guides, setup instructions, and usage examples for the MuffinBite email automation tool.
 
 <!-- **Live Site**: [Visit Documentation](https://muffinbite-docs.vercel.app) *(if deployed)* -->
 

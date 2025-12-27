@@ -20,15 +20,15 @@ export default function Home() {
             <NavBar
               items={[
                 { label: 'Docs', href: '/docs/introduction' },
-                { label: 'Install', href: '/docs/set_up' },
+                { label: 'Install', href: '/docs/requirements' },
                 { label: 'Examples', href: '/docs/use' },
                 { label: 'Developer', href: '/developer' }
               ]}
             />
           </div>
           <div className={cn(
-            "gap-5 backdrop-blur-[10px] bg-white/10 dark:bg-neutral-900/30",
-            "shadow-lg rounded-2xl p-10",
+            "gap-5 bg-black/20 backdrop-blur-[5px] dark:bg-neutral-900/30 border border-black/26",
+            "shadow-lg rounded-lg mx-4 px-2 py-5 md:p-10",
             "flex flex-col items-center"
           )}>
             <LogoIcon />
@@ -46,7 +46,21 @@ export default function Home() {
               textAlign="center"
               onLetterAnimationComplete={handleAnimationComplete}
             />
-            <p>Where automation meets personalization</p>
+            <SplitText
+              text="Interactive CLI for personalized bulk email campaigns"
+              className="text-md text-white font-semibold text-center"
+              delay={5}
+              duration={0.6}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="center"
+              onLetterAnimationComplete={handleAnimationComplete}
+            />
+            <p></p>
           </div>
         </div>
       </div >

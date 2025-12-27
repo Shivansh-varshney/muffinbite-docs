@@ -19,14 +19,14 @@ export default function SetupComponent() {
         <>
             <div>
                 <h2 className="text-2xl font-bold">Set Up</h2>
-                <p className="ml-5 my-2"> MuffinBite offers more setup options than there are ways to use it, you can <strong>download MuffinBite</strong>, <strong>install it via pip</strong>, or <strong>clone the repository</strong>. </p>
-                <Tabs className="mt-6" value={activeTab} onValueChange={setActiveTab}>
-                    <div className="relative w-1/2">
+                <p className="p-2 md:p-0 md:ml-5 md:my-2"> MuffinBite offers more setup options than there are ways to use it, you can <strong>download MuffinBite</strong>, <strong>install it via pip</strong>, or <strong>clone the repository</strong>. </p>
+                <Tabs className="mt-4" value={activeTab} onValueChange={setActiveTab}>
+                    <div className="relative w-full">
                         <TabsList className="relative flex w-full bg-transparent rounded-full overflow-hidden">
                             {/* Animated slider */}
                             <motion.div
                                 layoutId="slider"
-                                className="absolute top-[2px] left-[2px] h-[calc(100%-4px)] w-[calc(50%-4px)] bg-white/30 rounded-full"
+                                className="absolute top-[2px] left-[2px] h-[calc(100%-4px)] w-[calc(50%-4px)] bg-black/30 rounded-full"
                                 animate={{
                                     x:
                                         activeTab === "pip" ? "0%" :
@@ -50,7 +50,7 @@ export default function SetupComponent() {
                         </TabsList>
                     </div>
 
-                    <TabsContent className="mx-5 overflow-y-auto element font-bold" value="pip" >
+                    <TabsContent className="md:mx-5 overflow-y-auto element font-bold" value="pip" >
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key="pip"
@@ -59,7 +59,7 @@ export default function SetupComponent() {
                                 exit={{ opacity: 0, y: -20 }}
                                 transition={{ duration: 0.4, ease: "easeInOut" }}
                             >
-                                <div className="mt-4 space-y-4">
+                                <div className="mt-4 space-y-1">
                                     <p>
                                         If you like your MuffinBite with a side of Python, this method is your jam. <br /><br />
                                         1. Create a folder with whatever name you like and wherever you like
@@ -69,37 +69,22 @@ export default function SetupComponent() {
                                     </p>
                                     <p className="flex flex-col">
                                         3. Now, install MuffinBite using pip.
-                                        <span className="inline-block mx-5 my-2 relative bg-black/50 rounded-xl p-4 font-mono text-sm text-white/90 shadow-inner overflow-x-auto">
+                                        <span className="inline-block md:mx-5 my-2 relative bg-black/50 rounded-lg p-4 font-mono text-sm text-white/90 shadow-inner overflow-x-auto">
                                             <button
                                                 onClick={copyToClipboard}
-                                                className="absolute top-3 right-3 px-2 py-1 rounded-md text-xs transition"
+                                                className="absolute top-2 right-3 px-2 py-1 rounded-md text-xs transition"
                                             >
                                                 {copied ? <span className="text-green-500">Copied!</span> : <Copy className="h-4 w-4" />}
                                             </button>
                                             <code onClick={copyToClipboard} className="whitespace-pre-wrap block">pip install muffinbite</code>
                                         </span>
                                     </p>
-                                    <p>
-                                        4. Move the &quot;credentials.json&quot; file to this folder, that you downloaded in the requirements step.
-                                    </p>
-                                    <p className="flex flex-col">
-                                        5. Now, run MuffinBite using the command below.
-                                        <span className="inline-block mx-5 my-2 relative bg-black/50 rounded-xl p-4 font-mono text-sm text-white/90 shadow-inner overflow-x-auto">
-                                            <button
-                                                onClick={copyToClipboard}
-                                                className="absolute top-3 right-3 px-2 py-1 rounded-md text-xs transition"
-                                            >
-                                                {copied ? <span className="text-green-500">Copied!</span> : <Copy className="h-4 w-4" />}
-                                            </button>
-                                            <code onClick={copyToClipboard} className="whitespace-pre-wrap block">{`(environment) shivansh@shivansh:~/Desktop/all_codes/tryMuffinBite$ bite 
-bite>`} </code>
-                                        </span>
-                                    </p>
+
                                 </div>
                             </motion.div>
                         </AnimatePresence>
                     </TabsContent>
-                    <TabsContent className="mx-5 overflow-y-auto element font-bold" value="clone">
+                    <TabsContent className="md:mx-5 overflow-y-auto element font-bold" value="clone">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key="clone"
@@ -114,7 +99,7 @@ bite>`} </code>
                                         1. First things first, clone the repository using the command below.
                                     </p>
                                     <p className="flex flex-col">
-                                        <span className="inline-block mx-5 my-2 relative bg-black/50 rounded-xl p-4 font-mono text-sm text-white/90 shadow-inner overflow-x-auto">
+                                        <span className="inline-block md:mx-5 my-2 relative bg-black/50 rounded-lg p-4 font-mono text-sm text-white/90 shadow-inner overflow-x-auto">
                                             <button
                                                 onClick={copyToClipboard}
                                                 className="absolute top-3 right-3 px-2 py-1 rounded-md text-xs transition"
@@ -124,7 +109,7 @@ bite>`} </code>
                                             <code onClick={copyToClipboard} className="whitespace-pre-wrap block">git clone https://github.com/Shivansh-varshney/MuffinBite.git</code>
                                         </span>
                                         <span className="ml-5">OR</span>
-                                        <span className="inline-block mx-5 my-2 relative bg-black/50 rounded-xl p-4 font-mono text-sm text-white/90 shadow-inner overflow-x-auto">
+                                        <span className="inline-block md:mx-5 my-2 relative bg-black/50 rounded-lg p-4 font-mono text-sm text-white/90 shadow-inner overflow-x-auto">
                                             <button
                                                 onClick={copyToClipboard}
                                                 className="absolute top-3 right-3 px-2 py-1 rounded-md text-xs transition"
@@ -140,7 +125,7 @@ bite>`} </code>
                                     </p>
                                     <p className="flex flex-col">
                                         3. Now, install the clone project using pip in editable mode.
-                                        <span className="inline-block mx-5 my-2 relative bg-black/50 rounded-xl p-4 font-mono text-sm text-white/90 shadow-inner overflow-x-auto">
+                                        <span className="inline-block s:mx-5 my-2 relative bg-black/50 rounded-lg p-4 font-mono text-sm text-white/90 shadow-inner overflow-x-auto">
                                             <button
                                                 onClick={copyToClipboard}
                                                 className="absolute top-3 right-3 px-2 py-1 rounded-md text-xs transition"
@@ -150,31 +135,46 @@ bite>`} </code>
                                             <code onClick={copyToClipboard} className="whitespace-pre-wrap block">pip install -e /path/to/the/clone/folder</code>
                                         </span>
                                     </p>
-                                    <p>
-                                        4. Move the &quot;credentials.json&quot; file to this folder, that you downloaded in the requirements step.
-                                    </p>
-                                    <p className="flex flex-col">
-                                        5. Now, run MuffinBite using the command below.
-                                        <span className="inline-block mx-5 my-2 relative bg-black/50 rounded-xl p-4 font-mono text-sm text-white/90 shadow-inner overflow-x-auto">
-                                            <button
-                                                onClick={copyToClipboard}
-                                                className="absolute top-3 right-3 px-2 py-1 rounded-md text-xs transition"
-                                            >
-                                                {copied ? <span className="text-green-500">Copied!</span> : <Copy className="h-4 w-4" />}
-                                            </button>
-                                            <code onClick={copyToClipboard} className="whitespace-pre-wrap block">{`(environment) shivansh@shivansh:~/Desktop/all_codes/tryMuffinBite$ bite 
-bite>`} </code>
-                                        </span>
-                                    </p>
 
                                 </div>
                             </motion.div>
                         </AnimatePresence>
                     </TabsContent>
-                    <div className="ml-5 mt-4 space-y-4 font-bold">
+                    <div className="md:ml-5 md:mt-4 space-y-4 font-bold">
+                        <p>
+                            4. Move the &quot;credentials.json&quot; file to this folder, that you downloaded in the requirements step.
+                        </p>
+                        <div className="flex flex-col">
+                            5. Now, run MuffinBite using the command below.
+                            <div className="relative md:mx-5 my-2 bg-black/50 rounded-lg p-4 font-mono text-sm text-white/90 shadow-inner">
+
+                                <button
+                                    onClick={copyToClipboard}
+                                    className="absolute top-1 md:top-3 right-3 z-10 px-2 rounded-md text-xs"
+                                >
+                                    {copied ? (
+                                        <span className="text-green-500">Copied!</span>
+                                    ) : (
+                                        <Copy className="h-4 w-4" />
+                                    )}
+                                </button>
+
+                                <div className="overflow-x-auto py-5 md:py-0">
+                                    <code
+                                        onClick={copyToClipboard}
+                                        className="whitespace-pre block pr-16"
+                                    >
+                                        {`(environment) shivansh@shivansh:~/Desktop/all_codes/tryMuffinBite$ bite
+bite>`}
+                                    </code>
+                                </div>
+
+                            </div>
+
+                        </div>
                         <p className="flex flex-col">
                             6. Enter &quot;build&quot; to complete the set-up.
-                            <span className="inline-block mx-5 my-2 relative bg-black/50 rounded-xl p-4 font-mono text-sm text-white/90 shadow-inner overflow-x-auto">
+                            <span className="inline-block md:mx-5 my-2 relative bg-black/50 rounded-lg p-4 font-mono text-sm text-white/90 shadow-inner overflow-x-auto">
                                 <button
                                     onClick={copyToClipboard}
                                     className="absolute top-3 right-3 px-2 py-1 rounded-md text-xs transition"
@@ -212,7 +212,7 @@ bite>
                             </span>
                         </p>
                         <strong>Note:</strong>
-                        <ol className="ml-5 space-x-4 list-inside list-decimal">
+                        <ol className="md:ml-5 space-x-4 list-inside list-decimal">
                             <li>
                                 Enter the name and email you want to use to send emails.
                             </li>

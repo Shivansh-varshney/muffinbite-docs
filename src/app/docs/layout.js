@@ -1,17 +1,19 @@
 "use client";
 import { cn } from "@/lib/utils";
-import Head from "next/head";
-import Particles from "@/components/ui/Particles";
+import Image from "next/image";
 import Menu from "@/components/Menu"
 
-export default function RootLayout({ pageTitle, children }) {
+export default function RootLayout({ children }) {
     return (
-        <div className="flex h-full">
-            <Menu />
+        <div className="md:flex md:flex-row md:h-full mx-4 md:mx-0">
+            <div className="flex items-center justify-between">
+                <Menu />
+                <Image className="md:hidden rounded-lg" src="/logo-image.png" width={54} height={54} alt="logo" />
+            </div>
             <div
                 className={cn(
-                    "my-5 mr-5 w-full gap-5 backdrop-blur-[10px] bg-white/10 dark:bg-neutral-900/30",
-                    "shadow-lg rounded-2xl p-5 pl-8 overflow-y-auto element text-justify"
+                    "mb-4 md:my-5 md:mr-5 w-full sm:gap-5 backdrop-blur-[10px] bg-black/30 dark:bg-neutral-900/30",
+                    "shadow-lg rounded-lg p-3 sm:p-5 overflow-y-auto element sm:text-justify"
                 )}
             >
                 {children}

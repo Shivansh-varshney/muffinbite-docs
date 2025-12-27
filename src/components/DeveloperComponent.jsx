@@ -40,8 +40,8 @@ export default function DeveloperComponent() {
 
     return (
         <>
-            <Particles>
-                <div className="flex items-center justify-center h-full">
+            <Particles >
+                <div className="flex items-center justify-center h-screen px-2">
                     <div className="absolute top-[1em]">
                         <NavBar
                             items={[
@@ -56,9 +56,10 @@ export default function DeveloperComponent() {
                     {/* Card */}
                     <div
                         className={cn(
-                            "backdrop-blur-[10px] bg-white/10 dark:bg-neutral-900/30",
-                            "shadow-lg rounded-2xl",
-                            "flex items-center justify-center gap-10 p-10 mx-50"
+                            "backdrop-blur-[10px] bg-black/30",
+                            "shadow-lg rounded-lg",
+                            "flex flex-col items-center justify-center gap-5 p-5",
+                            "w-full max-w-xl"
                         )}
                     >
                         <Image
@@ -71,24 +72,24 @@ export default function DeveloperComponent() {
                         />
 
                         {/* Info */}
-                        <div className="max-w-xl">
-                            <h2 className="text-3xl font-bold">Shivansh Varshney</h2>
-                            <p className="my-2 text-gray-400 text-sm">
+                        <div className="flex flex-col max-w-xl">
+                            <h2 className="text-3xl font-bold mx-auto">Shivansh Varshney</h2>
+                            <p className="my-2 text-gray-400 text-sm mx-auto">
                                 <span className="font-semibold text-white">Full-Stack Developer</span> {"{ Python & JavaScript }"}
                             </p>
 
-                            <p className="mt-4 leading-relaxed text-gray-300">
+                            <p className="mt-4 leading-relaxed text-gray-300 text-justify">
                                 Passionate about building tools that blend simplicity with power.
                                 MuffinBite started as a side project to make outreach smarter,
-                                cleaner, and faster — now it’s evolving into a full automation framework.
+                                cleaner, and faster, now it’s evolving into a full automation tool.
                             </p>
 
-                            <div className="mt-6 flex justify-center md:justify-start gap-4">
+                            <div className="mt-6 flex justify-center gap-4">
                                 <a
                                     href="https://github.com/Shivansh-varshney"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center justify-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-md transition"
+                                    className="flex items-center justify-center gap-2 px-4 py-2 bg-black/30 hover:bg-white/10 text-white rounded-md transition"
                                 >
                                     <Github className="w-4 h-4" />
                                     GitHub
@@ -98,7 +99,7 @@ export default function DeveloperComponent() {
                                     href="https://www.linkedin.com/in/shivansh-varshney/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center justify-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-md transition"
+                                    className="flex items-center justify-center gap-2 px-4 py-2 bg-black/30 hover:bg-white/10 text-white rounded-md transition"
                                 >
                                     <Linkedin className="w-4 h-4" />
                                     LinkedIn
@@ -106,7 +107,7 @@ export default function DeveloperComponent() {
 
                                 <button
                                     onClick={() => setIsModalOpen(true)}
-                                    className="flex items-center justify-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-md transition"
+                                    className="flex items-center justify-center gap-2 px-4 py-2 bg-black/30 hover:bg-white/10 text-white rounded-md transition"
                                 >
                                     <Contact className="w-4 h-4" />
                                     Contact
@@ -116,16 +117,16 @@ export default function DeveloperComponent() {
                     </div>
                 </div>
 
-                {/* Contact Modal */}   
+                {/* Contact Modal */}
                 <AnimatePresence>
                     {isModalOpen && (
-                        <div className="fixed inset-0 font-bold flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
+                        <div onClick={() => setIsModalOpen(false)} className="fixed inset-0 font-bold flex items-center justify-center bg-black/30 backdrop-blur-md z-50">
                             <motion.div
                                 initial={{ y: -100, opacity: 0, scale: 0.95 }}
                                 animate={{ y: 0, opacity: 1, scale: 1 }}
                                 exit={{ y: -100, opacity: 0, scale: 0.95 }}
                                 transition={{ type: "spring", stiffness: 120, damping: 15 }}
-                                className="bg-white/30 p-6 rounded-xl shadow-lg w-96 relative"
+                                className="bg-black/30 p-6 rounded-lg shadow-lg w-96 relative"
                             >
                                 <button
                                     onClick={() => setIsModalOpen(false)}
