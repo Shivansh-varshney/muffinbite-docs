@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export const Logo = () => {
     return (
         <a
-            href="#"
+            href="/"
             className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
         >
             <Image width={35} height={35} src="/logo-image.png" alt="" className="rounded-sm" />
@@ -21,7 +21,7 @@ export const Logo = () => {
 export const LogoIcon = () => {
     return (
         <a
-            href="#"
+            href="/"
             className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black "
         >
             <Image width={130} height={130} src="/logo-image.png" alt="" className="rounded-sm" />

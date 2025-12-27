@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
 import { Tabs, TabsTrigger, TabsList, TabsContent } from "@/components/ui/tabs"
-import { ExternalLink, ArrowRight, ArrowLeft, Dot, Circle, CircleDot, CircleIcon, Disc, Disc2, Disc2Icon, Disc3, DiscAlbum } from "lucide-react";
+import { ExternalLink, ArrowRight, ArrowLeft, Disc } from "lucide-react";
 import Link from "next/link";
 
 export default function RequirementsComponent() {
@@ -28,62 +28,32 @@ export default function RequirementsComponent() {
             </div>
 
             <Tabs className="mt-4" value={activeTab} onValueChange={setActiveTab}>
-                <div className="md:hidden relative">
-                    <TabsList className="relative md:flex w-full bg-transparent rounded-full overflow-hidden">
-                        {/* Animated slider */}
-                        <motion.div
-                            layoutId="slider"
-                            className="absolute top-[2px] -left-[4px] md:left-[2px] h-[calc(100%-4px)] w-[calc(50%-4px)] md:h-[calc(100%-4px)] w-[calc(50%-4px)] bg-black/30 rounded-full"
-                            animate={{
-                                x: activeTab === "google" ? "0%" : "100%",
-                            }}
-                            transition={{ type: "spring", stiffness: 250, damping: 25 }}
-                        />
+                <TabsList className="relative md:flex w-full bg-transparent rounded-full overflow-hidden">
+                    {/* Animated slider */}
+                    <motion.div
+                        layoutId="slider"
+                        className="absolute top-[2px] -left-[4px] md:left-[2px] h-[calc(100%-4px)] w-[calc(50%-4px)] md:h-[calc(100%-4px)] w-[calc(50%-4px)] bg-black/30 rounded-full"
+                        animate={{
+                            x: activeTab === "google" ? "0%" : "100%",
+                        }}
+                        transition={{ type: "spring", stiffness: 250, damping: 25 }}
+                    />
 
-                        {/* Tabs */}
-                        <TabsTrigger
-                            value="google"
-                            className="relative z-10 flex-1 text-center text-white py-2 font-medium cursor-pointer rounded-full data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-white"
-                        >
-                            Using Gmail
-                        </TabsTrigger>
+                    {/* Tabs */}
+                    <TabsTrigger
+                        value="google"
+                        className="relative z-10 flex-1 text-center text-white py-2 font-medium cursor-pointer rounded-full data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-white"
+                    >
+                        Using Gmail
+                    </TabsTrigger>
 
-                        <TabsTrigger
-                            value="smtp"
-                            className="relative z-10 flex-1 text-center text-white py-2 font-medium cursor-pointer rounded-full data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-white"
-                        >
-                            Using SMTP
-                        </TabsTrigger>
-                    </TabsList>
-                </div>
-                <div className="hidden md:block relative">
-                    <TabsList className="relative md:flex w-full bg-transparent rounded-full overflow-hidden">
-                        {/* Animated slider */}
-                        <motion.div
-                            layoutId="slider"
-                            className="absolute top-[2px] -left-[4px] md:left-[2px] h-[calc(100%-4px)] w-[calc(50%-4px)] md:h-[calc(100%-4px)] w-[calc(50%-4px)] bg-black/30 rounded-full"
-                            animate={{
-                                x: activeTab === "google" ? "0%" : "100%",
-                            }}
-                            transition={{ type: "spring", stiffness: 250, damping: 25 }}
-                        />
-
-                        {/* Tabs */}
-                        <TabsTrigger
-                            value="google"
-                            className="relative z-10 flex-1 text-center text-white py-2 font-medium cursor-pointer rounded-full data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-white"
-                        >
-                            Using Gmail API (Recommended)
-                        </TabsTrigger>
-
-                        <TabsTrigger
-                            value="smtp"
-                            className="relative z-10 flex-1 text-center text-white py-2 font-medium cursor-pointer rounded-full data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-white"
-                        >
-                            Using SMTP Service Provider
-                        </TabsTrigger>
-                    </TabsList>
-                </div>
+                    <TabsTrigger
+                        value="smtp"
+                        className="relative z-10 flex-1 text-center text-white py-2 font-medium cursor-pointer rounded-full data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-white"
+                    >
+                        Using SMTP
+                    </TabsTrigger>
+                </TabsList>
 
                 <TabsContent className="md:mx-5 overflow-y-auto element" value="google">
                     <AnimatePresence mode="wait">

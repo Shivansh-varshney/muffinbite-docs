@@ -2,7 +2,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils"
 import { Logo } from "./ui/Logo";
 import { Sidebar, SidebarBody, SidebarLink } from "./ui/sidebar"
-import { Home, Box, Info, Puzzle, Settings, Command, UserCog } from 'lucide-react';
+import { Box, Info, Puzzle, Settings, Command, UserCog } from 'lucide-react';
 
 export default function Menu() {
 

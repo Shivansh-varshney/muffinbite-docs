@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@radix-ui/react-tabs";
-import { Download, Copy, ArrowLeft, ArrowRight } from "lucide-react";
+import { Copy, ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function SetupComponent() {

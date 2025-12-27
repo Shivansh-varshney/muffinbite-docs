@@ -65,8 +65,8 @@ export default function IntroductionComponent() {
                     </ul>
 
                     <h2 className="text-4xl font-extrabold text-white tracking-tight">Features</h2>
-                    <div className="mx-5 my-2 flex flex-col md:flex-row justify-between gap-8 mb-4">
-                        <ul className="list-disc list-inside space-y-1 text-white/90 text-[15px] leading-relaxed overflow-y-auto element max-h-72 pr-4
+                    <div className="mx-5 my-2 flex flex-col md:flex-row justify-between">
+                        <ul className="list-disc list-inside space-y-1 text-white/90 text-[15px] leading-relaxed element
                       scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent hover:scrollbar-thumb-white/40 transition-all duration-300">
                             <li>Attach unlimited files of any type</li>
                             <li>Send 500 emails per day using the Gmail API</li>
@@ -77,7 +77,7 @@ export default function IntroductionComponent() {
                             <li>Set a custom time delay between sending emails to avoid spam filters</li>
                         </ul>
 
-                        <ul className="list-disc list-inside space-y-1 text-white/90 text-[15px] leading-relaxed overflow-y-auto element max-h-72 pr-4
+                        <ul className="list-disc list-inside space-y-1 text-white/90 text-[15px] leading-relaxed element
                       scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent hover:scrollbar-thumb-white/40 transition-all duration-300">
                             <li>Run shell commands directly from the MuffinBite CLI using “!command”</li>
                             <li>Send 500 HTML template emails per day with embedded images (base64 supported)</li>
